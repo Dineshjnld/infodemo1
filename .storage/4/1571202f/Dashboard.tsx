@@ -19,6 +19,7 @@ import {
   MapPin,
   AlertTriangle
 } from 'lucide-react';
+import Chatbot from './Chatbot'; // Import the new Chatbot component
 
 export default function Dashboard() {
   const currentWeather = {
@@ -50,11 +51,13 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-4xl font-bold text-green-800">AgriGuru Dashboard</h1>
+      <div className="max-w-7xl mx-auto flex space-x-6"> {/* Changed to flex and added space-x-6 */}
+        <Chatbot /> {/* Add the Chatbot component here */}
+        <div className="flex-grow space-y-6"> {/* Added flex-grow for the main content */}
+          {/* Header */}
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-4xl font-bold text-green-800">AgriGuru Dashboard</h1>
             <p className="text-lg text-green-600 mt-2">Intelligent Agricultural Advisory System</p>
             <div className="flex items-center gap-2 mt-2 text-sm text-gray-600">
               <MapPin className="w-4 h-4" />
